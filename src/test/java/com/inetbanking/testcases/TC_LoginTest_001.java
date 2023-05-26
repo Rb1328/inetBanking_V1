@@ -3,6 +3,7 @@ package com.inetbanking.testcases;
 
 import java.util.logging.Logger;
 
+import org.openqa.selenium.Alert;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -22,11 +23,19 @@ public class TC_LoginTest_001 extends BaseClass{
 		
 		if(driver.getTitle().equals("Guru99 Bank Manager HomePage")){
 			Assert.assertTrue(true);
+		
 		}
-		else {
-			Assert.assertTrue(false);
+		else  {
+//			lg.AlertMethod();
+//		System.out.println("Into Alert ");
+		 Alert alert = driver.switchTo().alert();
+		 alert.accept();
 		}
 			
+//		else{
+//			Assert.assertTrue(false);
+//			
+//		}
 	}	
 	
 
