@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeClass;
 
 import com.inetbanking.Utilities.ReadConfig;
@@ -13,6 +14,7 @@ public class BaseClass {
 	String baseUrl=rc.getApplcationUrl();
 	String uname=rc.getUsername();
 	String pwd=rc.getPassword();
+	String Chrome=rc.getChromePath();
 	WebDriver driver;
 	
 
@@ -20,7 +22,7 @@ public class BaseClass {
 	public void setup() {
 //		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
 	
-		System.setProperty("webdriver.chrome.driver",rc.getChromePath());
+		System.setProperty("webdriver.chrome.driver",Chrome);
 
 		driver=new ChromeDriver();
 		System.out.println(baseUrl);
@@ -28,7 +30,7 @@ public class BaseClass {
 //		Logger logger=Logger.getLogger("ebanking");
 //		PropertyConfigurator.configure("Log4j.properties");
 		
-		
+	
 	}
 
 	public void tearDown() {

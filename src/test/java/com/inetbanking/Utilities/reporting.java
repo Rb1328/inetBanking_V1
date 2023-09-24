@@ -78,10 +78,8 @@ public class reporting extends TestListenerAdapter{
 			}
 			catch(Exception e) {
 				e.printStackTrace();
-			}
-		}
-		
-		
+			}	
+		}	
 	}
 	
 	public void onTestSkipped(ITestResult tr) {
